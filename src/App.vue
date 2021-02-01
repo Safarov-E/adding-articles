@@ -10,10 +10,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import PostForm from './components/PostForm'
 export default {
   name: 'App',
   computed: mapGetters(['allPosts', 'postsCount']),
   methods: mapActions(['fetchPosts']),
+  components: { PostForm  },
   async mounted() {
     this.fetchPosts(4)
   }

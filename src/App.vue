@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Количество посто: {{postsCount}}</h1>
     <div class="post" v-for="post in allPosts" :key="post.id">
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
@@ -11,7 +12,7 @@
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'App',
-  computed: mapGetters(['allPosts']),
+  computed: mapGetters(['allPosts', 'postsCount']),
   methods: mapActions(['fetchPosts']),
   async mounted() {
     this.fetchPosts(4)

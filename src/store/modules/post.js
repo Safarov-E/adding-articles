@@ -5,6 +5,9 @@ export default {
     getters: {
         allPosts(state) {
             return state.posts
+        },
+        postsCount(state) {
+            return state.posts.length
         }
     },
     mutations: {

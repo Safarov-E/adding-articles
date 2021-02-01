@@ -8,13 +8,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'App',
-  computed: {
-    allPosts() {
-      return this.$store.getters.allPosts;
-    }
-  },
+  computed: mapGetters(['allPosts']),
   async mounted() {
     const res = await fetch('http://jsonplaceholder.typicode.com/posts?_limit=3')
     const posts = await res.json()

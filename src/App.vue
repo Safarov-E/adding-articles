@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>Количество посто: {{postsCount}}</h1>
+    <PostForm />
+    <h1>Количество постов: {{postsCount}}</h1>
     <div class="post" v-for="post in allPosts" :key="post.id">
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
@@ -15,7 +16,7 @@ export default {
   name: 'App',
   computed: mapGetters(['allPosts', 'postsCount']),
   methods: mapActions(['fetchPosts']),
-  components: { PostForm  },
+  components: { PostForm },
   async mounted() {
     this.fetchPosts(4)
   }

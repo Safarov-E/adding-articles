@@ -1,10 +1,27 @@
 <template>
-    <form>
-        <input type="text" />
-        <input type="text" />
+    <form @submit.prevent="submit">
+        <input type="text" placeholder="title" v-model="title" />
+        <input type="text" placeholder="body" v-model="body" />
         <button type="submit">Create Post</button>
+        <hr>
     </form>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            title: "",
+            body: ""
+        }
+    },
+    methods: {
+        submit() {
+            
+        }
+    }
+}
+</script>
 
 <style scoped>
     input {

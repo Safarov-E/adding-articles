@@ -13,8 +13,8 @@ export default {
         }
     },
     actions: {
-        async fetchPosts(ctx) {
-            const res = await fetch('http://jsonplaceholder.typicode.com/posts?_limit=3')
+        async fetchPosts(ctx, limit = 3) {
+            const res = await fetch('http://jsonplaceholder.typicode.com/posts?_limit='+limit)
             const posts = await res.json()
 
             ctx.commit('updatePosts', posts)

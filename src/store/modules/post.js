@@ -1,6 +1,12 @@
 export default {
-    state:{},
+    state:{
+        posts: []
+    },
+    getters: {
+        allPosts(state) {
+            return state.posts
+        }
+    },
     actions: {},
-    mutations: {},
-    getters: {}
+    mutations: {}
 }

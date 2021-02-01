@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="post" v-for="post in posts" :key="post.id">
+    <div class="post" v-for="post in allPosts" :key="post.id">
       <h2>{{post.title}}</h2>
       <p>{{post.body}}</p>
     </div>
@@ -10,9 +10,9 @@
 <script>
 export default {
   name: 'App',
-  data() {
-    return {
-      posts: []
+  computed: {
+    allPosts() {
+      return this.$store.getters.allPosts;
     }
   },
   async mounted() {
